@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cela Wonder — Products</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💊%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <style>
+<style>
+/* ── RESET & VARS ── */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+:root{
+  --bg:       #FAFAF8;
+  --bg2:      #F4F0F9;
+  --surface:  #FFFFFF;
+  --border:   #E8E2F0;
+  --border2:  #D4CCE8;
+  --ink:      #1c1640;
+  --ink2:     #5a5070;
+  --ink3:     #9890b0;
+  --accent:   #8c77b6;
+  --accent2:  #6B4FA8;
+  --accentbg: #F0EAF8;
+  --white:    #FFFFFF;
+  --serif:    'Instrument Serif',Georgia,serif;
+  --sans:     'Sora',sans-serif;
+
+  --ease:     cubic-bezier(.4,0,.2,1);
+}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;min-height:100vh;overflow-x:hidden}
+
+/* ── HEADER ── */
+header{
+  position:sticky;top:0;z-index:200;
+  background:rgba(250,250,248,.96);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:0 2rem;
+  display:grid;grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  height:68px;
+  gap:1rem;
+}
+.nav-left{display:flex;gap:1.5rem;align-items:center}
+.nav-right{display:flex;gap:.7rem;align-items:center;justify-content:flex-end}
+.logo{display:flex;align-items:center;justify-content:center;height:100%}
+.logo svg{height:30px;width:auto;fill:var(--ink);transition:opacity .2s}
+.logo:hover svg{opacity:.7}
+
+/* nav flex now handled by .nav-left/.nav-right */
+.nav-left a, .nav-right > a{
+  font-family:var(--sans);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink2);text-decoration:none;font-weight:400;transition:color .2s;
+  display:flex;flex-direction:column;align-items:center;gap:.1rem;line-height:1.2;
+}
+.nav-left a:hover, .nav-right > a:hover{color:var(--ink)}
+.nav-sub{
+  font-family:var(--sans);font-size:.55rem;letter-spacing:.02em;text-transform:none;
+  color:var(--ink3);font-weight:300;opacity:.7;
+}
+.nav-left a:hover .nav-sub, .nav-right > a:hover .nav-sub{opacity:1;color:var(--ink3)}
+.nav-tools{display:flex;gap:.6rem;align-items:center}
+.icon-btn{
+  width:36px;height:36px;border:1px solid var(--border);border-radius:50%;
+  background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;color:var(--ink2);transition:all .2s;position:relative;
+}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+.line-btn{background:#06C755;color:#fff!important;border-color:#06C755;font-size:.5rem;font-weight:600;letter-spacing:.03em;text-decoration:none}
+.line-btn:hover{background:#05a34a;border-color:#05a34a;color:#fff!important}
+.icon-btn .badge{
+  position:absolute;top:-3px;right:-3px;width:14px;height:14px;
+  background:var(--accent);border-radius:50%;font-family:var(--sans);
+  font-size:.5rem;color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:600;
+}
+
+/* ── HERO ── */
+.hero{
+  padding:6rem 2.5rem 4.5rem;
+  border-bottom:1px solid var(--border);
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+  max-width:1280px;margin:0 auto;
+}
+.hero-left{}
+.hero-eyebrow{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--accent);font-weight:400;margin-bottom:1.6rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.hero-eyebrow::before{content:'';display:block;width:2.5rem;height:1px;background:var(--accent)}
+.hero h1{
+  font-family:var(--serif);font-size:clamp(2.8rem,5vw,5rem);
+  font-weight:400;line-height:1.05;color:var(--ink);letter-spacing:-.02em;margin-bottom:1.2rem;
+}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{
+  font-family:var(--sans);font-size:.88rem;color:var(--ink2);
+  line-height:1.8;font-weight:300;margin-bottom:2.5rem;max-width:380px;
+}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{
+  font-family:var(--sans);font-size:.68rem;letter-spacing:.15em;font-weight:500;
+  text-transform:uppercase;background:var(--ink);color:#fff;
+  padding:.75rem 1.8rem;border-radius:2px;text-decoration:none;border:none;
+  cursor:pointer;transition:all .2s;
+}
+.btn-primary:hover{background:var(--accent)}
+.btn-secondary{
+  font-family:var(--sans);font-size:.68rem;letter-spacing:.15em;font-weight:400;
+  text-transform:uppercase;background:none;color:var(--ink);
+  padding:.75rem 1.8rem;border-radius:2px;text-decoration:none;
+  border:1px solid var(--border2);cursor:pointer;transition:all .2s;
+}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+
+.hero-right{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--border);border:1px solid var(--border);
+}
+.hero-stat{
+  background:var(--white);padding:1.8rem;
+}
+.hero-stat:nth-child(2){background:var(--accentbg)}
+.hero-stat-num{
+  font-family:var(--serif);font-size:2.2rem;color:var(--ink);
+  display:block;line-height:1;margin-bottom:.4rem;
+}
+.hero-stat-label{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink3);font-weight:400;
+}
+.hero-stat-desc{
+  font-family:var(--sans);font-size:.78rem;color:var(--ink2);
+  margin-top:.3rem;font-weight:300;
+}
+
+/* ── QUICK ACTIONS BAR ── */
+.quick-bar{
+  background:var(--ink);
+  display:flex;gap:0;overflow-x:auto;scrollbar-width:none;
+}
+.quick-bar::-webkit-scrollbar{display:none}
+@media(min-width:769px){
+  .quick-bar{ justify-content:center; }
+}
+.quick-action{
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);background:none;border:none;border-right:1px solid rgba(255,255,255,.08);
+  padding:1rem 1.8rem;cursor:pointer;white-space:nowrap;transition:color .2s;font-weight:400;
+  display:flex;align-items:center;gap:.6rem;
+}
+.quick-action:hover{color:#fff}
+.quick-action.highlight{color:var(--accent)}
+.qa-icon{font-size:.9rem}
+
+/* ── FILTER BAR ── */
+.filter-bar{
+  position:sticky;top:68px;z-index:190;
+  background:rgba(250,250,248,.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.filter-inner-wrap{
+  max-width:1280px;margin:0 auto;padding:0 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.filter-tabs{display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.filter-tabs::-webkit-scrollbar{display:none}
+.filter-tab{
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink3);background:none;border:none;border-bottom:2px solid transparent;
+  padding:1rem 1.1rem;cursor:pointer;white-space:nowrap;transition:all .2s;font-weight:400;
+}
+.filter-tab:hover{color:var(--ink2)}
+.filter-tab.active{color:var(--ink);border-bottom-color:var(--ink);font-weight:500}
+.filter-right{display:flex;gap:.6rem;align-items:center;flex-shrink:0}
+.search-wrap{position:relative}
+.search-input{
+  font-family:var(--sans);font-size:.72rem;letter-spacing:.04em;
+  background:var(--white);border:1px solid var(--border);color:var(--ink);
+  padding:.55rem 1rem .55rem 2.2rem;border-radius:20px;width:200px;
+  outline:none;transition:all .2s;
+}
+.search-input:focus{border-color:var(--accent);width:240px}
+.search-input::placeholder{color:var(--ink3)}
+.search-ico{
+  position:absolute;left:.75rem;top:50%;transform:translateY(-50%);
+  color:var(--ink3);font-size:.7rem;pointer-events:none;
+}
+.compare-btn{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  background:none;border:1px solid var(--border);color:var(--ink2);
+  padding:.5rem 1rem;border-radius:2px;cursor:pointer;transition:all .2s;font-weight:400;
+  display:flex;align-items:center;gap:.4rem;
+}
+.compare-btn:hover,.compare-btn.active{border-color:var(--accent);color:var(--accent)}
+.compare-count{
+  background:var(--accent);color:#fff;border-radius:50%;
+  width:16px;height:16px;font-size:.5rem;display:flex;align-items:center;justify-content:center;
+  font-weight:600;
+}
+
+/* ── CATALOGUE ── */
+.catalogue{max-width:1280px;margin:0 auto;padding:0 2.5rem 6rem}
+.cat-label{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--ink3);padding:2.5rem 0 1.2rem;
+  display:flex;align-items:center;gap:1rem;font-weight:400;
+}
+.cat-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+.product-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:1px;background:var(--border);border:1px solid var(--border);
+}
+
+/* ── PRODUCT CARD ── */
+.card{
+  background:var(--white);padding:1.8rem;cursor:pointer;
+  transition:background .15s;position:relative;
+  display:flex;flex-direction:column;gap:.8rem;
+  animation:fadeUp .35s var(--ease) both;
+}
+.card:hover{background:var(--bg2)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.card-top{display:flex;justify-content:space-between;align-items:flex-start}
+.card-tag{
+  font-family:var(--sans);font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink3);font-weight:400;
+}
+.card-actions{display:flex;gap:.4rem;align-items:center}
+.card-compare-check{
+  width:20px;height:20px;border:1px solid var(--border2);border-radius:3px;
+  background:none;cursor:pointer;transition:all .2s;
+  display:flex;align-items:center;justify-content:center;font-size:.6rem;color:transparent;
+}
+.card-compare-check.checked{background:var(--accent);border-color:var(--accent);color:#fff}
+.card-arrow{color:var(--ink3);font-size:.8rem;transition:all .2s}
+.card:hover .card-arrow{color:var(--accent);transform:translate(2px,-2px)}
+
+.card-name{
+  font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--ink);
+  line-height:1.15;letter-spacing:-.01em;
+}
+.card-name-thai{
+  font-family:var(--sans);font-size:.75rem;color:var(--ink3);font-weight:300;
+}
+.card-vials{
+  font-family:var(--sans);font-size:.6rem;color:var(--accent);
+  letter-spacing:.08em;font-weight:400;
+}
+.card-desc{
+  font-family:var(--sans);font-size:.8rem;color:var(--ink2);
+  line-height:1.65;font-weight:300;flex:1;
+}
+.card-footer{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  padding-top:1.2rem;border-top:1px solid var(--border);margin-top:auto;
+}
+.card-price{font-family:var(--serif);font-size:1.3rem;color:var(--ink)}
+.card-price-from{font-family:var(--sans);font-size:.52rem;color:var(--ink3);letter-spacing:.1em}
+.card-badges{display:flex;gap:.4rem;align-items:center}
+.badge-popular{
+  font-family:var(--sans);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--accentbg);color:var(--accent);padding:.2rem .55rem;border-radius:20px;font-weight:500;
+}
+.badge-deal{
+  font-family:var(--sans);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;
+  background:#f0faf0;color:#2d7a4f;padding:.2rem .55rem;border-radius:20px;font-weight:500;
+}
+
+.card.compare-selected{outline:2px solid var(--accent);outline-offset:-2px}
+
+/* ── EMPTY STATE ── */
+.empty{text-align:center;padding:6rem 2rem;display:none}
+.empty.show{display:block}
+.empty h3{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--ink2);margin-bottom:.5rem}
+.empty p{font-family:var(--sans);font-size:.65rem;letter-spacing:.1em;color:var(--ink3)}
+
+/* ── DRAWER (shared) ── */
+.overlay{
+  position:fixed;inset:0;background:rgba(28,22,64,.4);z-index:500;
+  opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px);
+}
+.overlay.open{opacity:1;pointer-events:all}
+.drawer{
+  position:fixed;top:0;right:0;width:min(580px,100vw);height:100vh;
+  background:var(--white);border-left:1px solid var(--border);z-index:501;
+  transform:translateX(100%);transition:transform .35s var(--ease);
+  overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--border) transparent;
+  display:flex;flex-direction:column;
+}
+.drawer.open{transform:translateX(0)}
+.drawer-head{
+  position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--border);
+  padding:1.2rem 1.8rem;display:flex;justify-content:space-between;align-items:center;z-index:10;
+}
+.drawer-head-label{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--accent);font-weight:500;
+}
+.drawer-close{
+  font-family:var(--sans);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;
+  background:none;border:1px solid var(--border);color:var(--ink2);
+  padding:.35rem .8rem;border-radius:2px;cursor:pointer;transition:all .2s;
+}
+.drawer-close:hover{border-color:var(--ink);color:var(--ink)}
+.drawer-body{padding:2rem 1.8rem;flex:1}
+
+/* Product drawer */
+.d-name{font-family:var(--serif);font-size:2.2rem;font-weight:400;color:var(--ink);line-height:1.05;margin-bottom:.3rem}
+.d-name-thai{font-family:var(--sans);font-size:.88rem;color:var(--ink3);margin-bottom:1.2rem}
+.d-vials{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.vial-chip{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.08em;
+  border:1px solid var(--border2);color:var(--ink2);padding:.25rem .75rem;border-radius:20px;
+}
+.d-desc{font-family:var(--sans);font-size:.88rem;color:var(--ink2);line-height:1.8;margin-bottom:2rem;font-weight:300}
+
+/* Quickview dosing card */
+.dosing-card{
+  background:var(--ink);border-radius:4px;padding:1.5rem;margin-bottom:2rem;
+}
+.dosing-card-title{
+  font-family:var(--sans);font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);margin-bottom:1rem;font-weight:400;
+}
+.dosing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.08)}
+.dosing-cell{background:var(--ink);padding:.9rem;text-align:center}
+.dosing-val{
+  font-family:var(--serif);font-size:1.4rem;color:#fff;
+  display:block;line-height:1;margin-bottom:.3rem;
+}
+.dosing-lbl{
+  font-family:var(--sans);font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);font-weight:400;
+}
+
+.section-title{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1rem;font-weight:500;
+  display:flex;align-items:center;gap:.8rem;
+}
+.section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+
+.spec-table{width:100%;border-collapse:collapse;margin-bottom:2rem}
+.spec-table tr{border-bottom:1px solid var(--border)}
+.spec-table tr:last-child{border-bottom:none}
+.spec-lbl{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink3);width:38%;padding:.75rem 0;vertical-align:top;padding-top:.9rem;
+}
+.spec-val{
+  font-family:var(--sans);font-size:.83rem;color:var(--ink);padding:.75rem 0;
+  line-height:1.6;font-weight:300;
+}
+
+/* Bundle suggestions */
+.bundles-grid{display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
+.bundle-item{
+  display:flex;align-items:center;gap:1rem;padding:1rem;
+  background:var(--bg);border:1px solid var(--border);border-radius:3px;
+  transition:all .2s;
+}
+.bundle-icon{font-size:1.2rem;flex-shrink:0}
+.bundle-info{flex:1}
+.bundle-name{
+  font-family:var(--serif);font-size:1rem;color:var(--ink);margin-bottom:.15rem;
+}
+.bundle-why{font-family:var(--sans);font-size:.75rem;color:var(--ink2);font-weight:300}
+.bundle-price{font-family:var(--serif);font-size:.95rem;color:var(--accent)}
+
+.notes-box{
+  background:var(--bg);border-left:3px solid var(--accent);
+  padding:1rem 1.2rem;border-radius:0 3px 3px 0;margin-bottom:2rem;
+}
+.notes-box p{font-family:var(--sans);font-size:.83rem;color:var(--ink2);line-height:1.7;font-weight:300}
+
+.price-block{border:1px solid var(--border);border-radius:3px;margin-bottom:1.5rem}
+.price-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:.75rem 1.2rem;border-bottom:1px solid var(--border);
+}
+.price-row:last-child{border-bottom:none}
+.price-item{font-family:var(--sans);font-size:.68rem;letter-spacing:.06em;color:var(--ink2)}
+.price-amt{font-family:var(--serif);font-size:1.25rem;color:var(--ink)}
+.price-amt.deal{color:#2d7a4f}
+
+.d-cta{
+  display:block;width:100%;background:var(--ink);color:#fff;
+  font-family:var(--sans);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
+  font-weight:500;text-align:center;padding:1rem;border-radius:2px;
+  text-decoration:none;border:none;cursor:pointer;transition:all .2s;
+}
+.d-cta:hover{background:var(--accent2)}
+
+/* ── PROTOCOL BUILDER MODAL ── */
+.modal{
+  position:fixed;inset:0;z-index:600;
+  display:flex;align-items:center;justify-content:center;
+  padding:2rem;opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.modal.open{opacity:1;pointer-events:all}
+.modal-bg{position:absolute;inset:0;background:rgba(28,22,64,.5);backdrop-filter:blur(8px)}
+.modal-box{
+  position:relative;background:var(--white);border:1px solid var(--border);
+  border-radius:6px;width:100%;max-width:680px;max-height:85vh;overflow-y:auto;
+  transform:scale(.96) translateY(12px);transition:transform .3s var(--ease);
+  scrollbar-width:thin;
+}
+.modal.open .modal-box{transform:scale(1) translateY(0)}
+.modal-head{
+  padding:1.5rem 2rem;border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  position:sticky;top:0;background:var(--white);z-index:5;
+}
+.modal-title{
+  font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--ink);
+}
+.modal-body{padding:2rem}
+
+/* Goal selector */
+.goal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin-bottom:2rem}
+.goal-btn{
+  padding:1.2rem;border:1.5px solid var(--border);border-radius:4px;
+  background:none;cursor:pointer;text-align:left;transition:all .2s;
+}
+.goal-btn:hover,.goal-btn.active{border-color:var(--accent);background:var(--accentbg)}
+.goal-emoji{font-size:1.4rem;display:block;margin-bottom:.5rem}
+.goal-name{
+  font-family:var(--sans);font-size:.75rem;font-weight:500;color:var(--ink);
+  display:block;margin-bottom:.2rem;
+}
+.goal-desc{font-family:var(--sans);font-size:.72rem;color:var(--ink2);font-weight:300}
+
+.protocol-result{display:none}
+.protocol-result.show{display:block}
+.protocol-step{
+  display:flex;gap:1rem;padding:1rem;border:1px solid var(--border);border-radius:3px;
+  margin-bottom:.6rem;align-items:flex-start;background:var(--white);
+}
+.step-num{
+  font-family:var(--serif);font-size:1.3rem;color:var(--accent);flex-shrink:0;
+  width:32px;text-align:center;line-height:1.2;
+}
+.step-info{flex:1}
+.step-name{font-family:var(--serif);font-size:1.05rem;color:var(--ink);margin-bottom:.2rem}
+.step-detail{font-family:var(--sans);font-size:.78rem;color:var(--ink2);font-weight:300;line-height:1.6}
+.step-timing{
+  font-family:var(--sans);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink3);margin-top:.3rem;display:block;
+}
+.protocol-note{
+  background:var(--accentbg);border-radius:3px;padding:1rem 1.2rem;
+  font-family:var(--sans);font-size:.8rem;color:var(--ink2);line-height:1.7;
+  margin-top:1rem;font-weight:300;
+}
+
+/* ── COMPARE PANEL ── */
+.compare-panel{
+  position:fixed;bottom:0;left:0;right:0;z-index:400;
+  background:var(--ink);border-top:1px solid rgba(255,255,255,.1);
+  padding:1rem 2.5rem;
+  display:flex;align-items:center;gap:1.5rem;
+  transform:translateY(100%);transition:transform .3s var(--ease);
+}
+.compare-panel.open{transform:translateY(0)}
+.compare-panel-label{
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);font-weight:400;flex-shrink:0;
+}
+.compare-chips{display:flex;gap:.6rem;flex:1;flex-wrap:wrap}
+.compare-chip{
+  font-family:var(--sans);font-size:.62rem;background:rgba(255,255,255,.1);
+  color:#fff;padding:.35rem .9rem;border-radius:20px;display:flex;align-items:center;gap:.4rem;
+}
+.compare-chip-remove{cursor:pointer;opacity:.6;transition:opacity .2s}
+.compare-chip-remove:hover{opacity:1}
+.compare-go{
+  font-family:var(--sans);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:500;background:var(--accentbg);color:var(--accent);
+  border:none;padding:.6rem 1.4rem;border-radius:2px;cursor:pointer;transition:all .2s;
+}
+.compare-go:hover{background:var(--accent);color:#fff}
+.compare-clear{
+  font-family:var(--sans);font-size:.6rem;color:rgba(255,255,255,.35);
+  background:none;border:none;cursor:pointer;transition:color .2s;letter-spacing:.08em;
+}
+.compare-clear:hover{color:rgba(255,255,255,.7)}
+
+/* Compare drawer */
+.compare-table-wrap{overflow-x:auto}
+.compare-table{
+  width:100%;border-collapse:collapse;min-width:400px;
+}
+.compare-table th{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink3);padding:.7rem;text-align:left;border-bottom:2px solid var(--border);
+  font-weight:400;
+}
+.compare-table th.prod-col{
+  font-family:var(--serif);font-size:1rem;color:var(--ink);
+  font-style:normal;font-weight:400;letter-spacing:0;text-transform:none;
+}
+.compare-table td{
+  font-family:var(--sans);font-size:.8rem;color:var(--ink2);padding:.7rem;
+  border-bottom:1px solid var(--border);font-weight:300;vertical-align:top;
+}
+.compare-table td.row-label{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink3);font-weight:400;white-space:nowrap;
+}
+.compare-table tr:hover td{background:var(--bg2)}
+.compare-table tr:last-child td{border-bottom:none}
+
+/* ── PROGRESS TRACKER ── */
+.tracker-form{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem}
+.tracker-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.field-group{display:flex;flex-direction:column;gap:.4rem}
+.field-label{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink3);font-weight:400;
+}
+.field-input{
+  font-family:var(--sans);font-size:.82rem;background:var(--white);
+  border:1px solid var(--border);color:var(--ink);padding:.6rem .9rem;
+  border-radius:3px;outline:none;transition:border-color .2s;
+}
+.field-input:focus{border-color:var(--accent)}
+.field-input::placeholder{color:var(--ink3)}
+.tracker-submit{
+  font-family:var(--sans);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;
+  font-weight:500;background:var(--ink);color:#fff;
+  padding:.75rem;border-radius:2px;border:none;cursor:pointer;transition:background .2s;
+}
+.tracker-submit:hover{background:var(--accent)}
+
+.entry-list{display:flex;flex-direction:column;gap:.6rem}
+.entry-card{
+  background:var(--bg);border:1px solid var(--border);border-radius:3px;
+  padding:1rem 1.2rem;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start;
+}
+.entry-date{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:.3rem;
+}
+.entry-peptide{font-family:var(--serif);font-size:1rem;color:var(--ink);margin-bottom:.2rem}
+.entry-note{font-family:var(--sans);font-size:.78rem;color:var(--ink2);font-weight:300}
+.entry-delete{
+  background:none;border:none;color:var(--ink3);cursor:pointer;
+  font-size:.75rem;transition:color .2s;padding:.2rem;
+}
+.entry-delete:hover{color:#c0392b}
+.empty-tracker{
+  text-align:center;padding:3rem;
+  font-family:var(--sans);font-size:.88rem;color:var(--ink3);font-weight:300;
+}
+
+/* ── RESULTS GALLERY ── */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border)}
+.gallery-card{
+  background:var(--white);padding:1.5rem;
+}
+.gallery-before-after{
+  display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1rem;
+}
+.before-after-box{
+  background:var(--bg);border:1px solid var(--border);border-radius:3px;
+  aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:1rem;
+}
+.ba-label{
+  font-family:var(--sans);font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:.4rem;
+}
+.ba-value{font-family:var(--serif);font-size:1.4rem;color:var(--ink)}
+.ba-unit{font-family:var(--sans);font-size:.6rem;color:var(--ink3)}
+.gallery-name{font-family:var(--serif);font-size:1rem;color:var(--ink);margin-bottom:.2rem}
+.gallery-peptide{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:.4rem;
+}
+.gallery-duration{font-family:var(--sans);font-size:.78rem;color:var(--ink2);font-weight:300}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--border);padding:3rem 2.5rem;
+  max-width:1280px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;
+}
+.footer-logo svg{height:22px;fill:var(--ink3)}
+.footer-links{display:flex;gap:2rem}
+.footer-links a{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink3);text-decoration:none;transition:color .2s;
+}
+.footer-links a:hover{color:var(--ink)}
+.footer-line{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.1em;
+  color:var(--ink3);text-align:right;
+}
+
+/* ── UTILS ── */
+.card.hidden,.cat-section.hidden{display:none}
+
+/* ── MOBILE NAV ── */
+.hamburger{
+  display:none;flex-direction:column;gap:5px;
+  width:36px;height:36px;background:none;border:none;cursor:pointer;
+  align-items:center;justify-content:center;padding:6px;
+}
+.hamburger span{
+  display:block;width:20px;height:1.5px;background:var(--ink);
+  transition:all .3s var(--ease);transform-origin:center;
+}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+.mobile-nav{
+  position:fixed;top:68px;left:0;right:0;bottom:0;z-index:190;
+  background:var(--white);border-top:1px solid var(--border);
+  transform:translateX(-100%);transition:transform .32s var(--ease);
+  overflow-y:auto;padding:2rem 1.5rem;display:flex;flex-direction:column;gap:.3rem;
+}
+.mobile-nav.open{transform:translateX(0)}
+.mobile-nav-link{
+  font-family:var(--sans);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink);text-decoration:none;font-weight:400;
+  padding:1rem 0;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.mobile-nav-link:last-of-type{border-bottom:none}
+.mobile-nav-link span{color:var(--ink3);font-size:.7rem}
+.mobile-nav-actions{
+  margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:.6rem;
+}
+.mobile-nav-action{
+  font-family:var(--sans);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);background:var(--accentbg);border:none;
+  padding:.8rem;border-radius:3px;cursor:pointer;font-weight:500;
+  text-align:center;
+}
+
+/* ── ONBOARDING QUESTIONNAIRE ── */
+.onboard-modal{
+  position:fixed;inset:0;z-index:700;
+  display:flex;align-items:stretch;justify-content:flex-end;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.onboard-modal.open{opacity:1;pointer-events:all}
+.onboard-bg{position:absolute;inset:0;background:rgba(28,22,64,.45);backdrop-filter:blur(6px)}
+.onboard-panel{
+  position:relative;width:min(600px,100vw);height:100vh;
+  background:var(--white);display:flex;flex-direction:column;
+  transform:translateX(100%);transition:transform .38s var(--ease);
+  overflow:hidden;
+}
+.onboard-modal.open .onboard-panel{transform:translateX(0)}
+
+.onboard-head{
+  padding:1.5rem 2rem;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;flex-shrink:0;
+}
+.onboard-head-left{}
+.onboard-title{
+  font-family:var(--serif);font-size:1.3rem;color:var(--ink);font-weight:400;
+}
+.onboard-subtitle{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink3);margin-top:.15rem;
+}
+
+/* Progress bar */
+.onboard-progress{
+  height:3px;background:var(--border);flex-shrink:0;
+}
+.onboard-progress-fill{
+  height:100%;background:var(--accent);transition:width .4s var(--ease);
+}
+
+.onboard-body{flex:1;overflow-y:auto;padding:2rem;scrollbar-width:thin}
+.onboard-footer{
+  padding:1.2rem 2rem;border-top:1px solid var(--border);
+  display:flex;gap:.8rem;align-items:center;flex-shrink:0;
+  background:var(--white);
+}
+
+/* Step indicator */
+.step-indicator{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink3);
+}
+
+/* Question styles */
+.q-title{
+  font-family:var(--serif);font-size:1.4rem;color:var(--ink);
+  margin-bottom:.4rem;font-weight:400;
+}
+.q-sub{
+  font-family:var(--sans);font-size:.82rem;color:var(--ink2);
+  margin-bottom:1.8rem;font-weight:300;line-height:1.6;
+}
+
+.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.5rem}
+.q-grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+.q-grid.cols-1{grid-template-columns:1fr}
+
+.q-option{
+  padding:.9rem 1rem;border:1.5px solid var(--border);border-radius:4px;
+  background:var(--white);cursor:pointer;transition:all .18s;text-align:left;
+}
+.q-option:hover{border-color:var(--accent);background:var(--accentbg)}
+.q-option.selected{border-color:var(--accent);background:var(--accentbg)}
+.q-option.selected .q-opt-name{color:var(--accent2)}
+.q-opt-emoji{font-size:1.2rem;display:block;margin-bottom:.35rem}
+.q-opt-name{
+  font-family:var(--sans);font-size:.75rem;font-weight:500;color:var(--ink);
+  display:block;margin-bottom:.15rem;
+}
+.q-opt-desc{
+  font-family:var(--sans);font-size:.72rem;color:var(--ink3);
+  font-weight:300;display:block;
+}
+
+.q-input-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1rem}
+.q-input-row.cols-3{grid-template-columns:1fr 1fr 1fr}
+.q-field{display:flex;flex-direction:column;gap:.4rem}
+.q-label{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink3);font-weight:400;
+}
+.q-input,.q-select{
+  font-family:var(--sans);font-size:.82rem;background:var(--white);
+  border:1.5px solid var(--border);color:var(--ink);padding:.65rem .9rem;
+  border-radius:3px;outline:none;transition:border-color .2s;
+  appearance:none;
+}
+.q-input:focus,.q-select:focus{border-color:var(--accent)}
+.q-input::placeholder{color:var(--ink3)}
+
+/* Budget slider */
+.budget-slider-wrap{margin:1rem 0 1.5rem}
+.budget-display{
+  font-family:var(--serif);font-size:2rem;color:var(--accent);
+  text-align:center;margin-bottom:.8rem;
+}
+.budget-display span{font-family:var(--sans);font-size:.7rem;color:var(--ink3);display:block;letter-spacing:.1em;text-transform:uppercase}
+input[type=range]{
+  width:100%;accent-color:var(--accent);height:4px;cursor:pointer;
+}
+.budget-labels{
+  display:flex;justify-content:space-between;
+  font-family:var(--sans);font-size:.6rem;color:var(--ink3);letter-spacing:.06em;
+  margin-top:.5rem;
+}
+
+/* Medical checkboxes */
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1.5rem}
+.check-item{
+  display:flex;align-items:center;gap:.6rem;padding:.65rem .9rem;
+  border:1.5px solid var(--border);border-radius:4px;cursor:pointer;transition:all .18s;
+}
+.check-item:hover{border-color:var(--border2)}
+.check-item.checked{border-color:var(--accent);background:var(--accentbg)}
+.check-item input[type=checkbox]{accent-color:var(--accent);width:14px;height:14px;cursor:pointer}
+.check-item label{
+  font-family:var(--sans);font-size:.78rem;color:var(--ink);cursor:pointer;font-weight:300;
+}
+
+/* Result page */
+.result-header{
+  background:var(--ink);margin:-2rem -2rem 2rem;padding:2rem;
+}
+.result-label{
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:.5rem;
+}
+.result-name{
+  font-family:var(--serif);font-size:1.8rem;color:#fff;font-weight:400;line-height:1.1;
+}
+.result-budget-tag{
+  font-family:var(--sans);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);margin-top:.4rem;
+}
+
+.rec-stack{display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
+.rec-item{
+  display:grid;grid-template-columns:auto 1fr auto;gap:1rem;
+  padding:1rem 1.2rem;border:1.5px solid var(--border);border-radius:4px;
+  align-items:start;background:var(--white);
+}
+.rec-rank{
+  font-family:var(--serif);font-size:1.4rem;color:var(--accent);
+  line-height:1;padding-top:.1rem;
+}
+.rec-info{}
+.rec-name{font-family:var(--serif);font-size:1.05rem;color:var(--ink);margin-bottom:.15rem}
+.rec-why{font-family:var(--sans);font-size:.78rem;color:var(--ink2);font-weight:300;line-height:1.5}
+.rec-timing{
+  font-family:var(--sans);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink3);margin-top:.3rem;display:block;
+}
+.rec-price{
+  font-family:var(--serif);font-size:1rem;color:var(--ink);
+  white-space:nowrap;text-align:right;
+}
+.rec-price-sub{
+  font-family:var(--sans);font-size:.5rem;color:var(--ink3);
+  letter-spacing:.08em;display:block;text-align:right;margin-top:.1rem;
+}
+
+.budget-summary{
+  background:var(--accentbg);border:1.5px solid var(--border2);border-radius:4px;
+  padding:1.2rem 1.5rem;margin-bottom:2rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.budget-summary-label{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);
+}
+.budget-summary-total{font-family:var(--serif);font-size:1.5rem;color:var(--accent)}
+.budget-summary-note{font-family:var(--sans);font-size:.75rem;color:var(--ink2);font-weight:300}
+
+.send-box{
+  background:var(--bg);border:1px solid var(--border);border-radius:4px;
+  padding:1.2rem 1.5rem;margin-bottom:1.5rem;
+}
+.send-box-title{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:.8rem;
+}
+.compiled-msg{
+  font-family:var(--sans);font-size:.72rem;color:var(--ink2);line-height:1.7;
+  white-space:pre-wrap;word-break:break-word;
+  max-height:180px;overflow-y:auto;
+}
+.copy-btn{
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  background:none;border:1px solid var(--border2);color:var(--ink2);
+  padding:.4rem .9rem;border-radius:2px;cursor:pointer;transition:all .2s;
+  margin-top:.8rem;font-weight:500;
+}
+.copy-btn:hover{border-color:var(--accent);color:var(--accent)}
+.copy-btn.copied{border-color:#2d7a4f;color:#2d7a4f}
+
+
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .nav-left,.nav-right > a{display:none}
+  /* show only hamburger + order */
+  .hamburger-wrap{display:flex;gap:.6rem;align-items:center}
+  .hero{grid-template-columns:1fr;padding:3.5rem 1.5rem 2.5rem;gap:2rem}
+  .hero h1{font-size:2.4rem}
+  .catalogue{padding-left:1rem;padding-right:1rem}
+  .filter-inner-wrap{padding-left:1rem;padding-right:1rem;flex-wrap:wrap;gap:.5rem}
+  .search-input{width:150px}
+  .search-input:focus{width:170px}
+  .quick-bar{padding-left:1rem;padding-right:1rem}
+  .product-grid{grid-template-columns:1fr}
+  .drawer,.onboard-panel{width:100vw}
+  .modal-box{width:100vw;max-height:100vh;border-radius:0}
+  .gallery-grid{grid-template-columns:1fr}
+  footer{padding:2rem 1.5rem;flex-direction:column;align-items:flex-start}
+  .footer-links{flex-wrap:wrap;gap:1rem}
+  #trackerGrid{grid-template-columns:1fr !important}
+  .q-grid{grid-template-columns:1fr}
+  .q-grid.cols-3{grid-template-columns:1fr 1fr}
+  .q-input-row{grid-template-columns:1fr}
+  .q-input-row.cols-3{grid-template-columns:1fr 1fr}
+  .check-grid{grid-template-columns:1fr}
+  .onboard-head{padding:1.2rem 1.5rem}
+  .onboard-body{padding:1.5rem}
+  .onboard-footer{padding:1rem 1.5rem}
+  .result-header{margin:-1.5rem -1.5rem 1.5rem;padding:1.5rem}
+  .rec-item{grid-template-columns:auto 1fr}
+  .rec-price{grid-column:2}
+}
+
+/* ══════════════════════════════════════════════
+   FAQ
+══════════════════════════════════════════════ */
+#faq{background:var(--bg)}
+.faq-filter{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-item[data-hidden]{display:none}
+.faq-q{display:flex;align-items:center;gap:.9rem;padding:1.05rem 0;cursor:pointer;font-family:var(--sans);font-size:.8rem;font-weight:500;color:var(--ink);letter-spacing:.01em;user-select:none;transition:color .2s}
+.faq-q:hover{color:var(--accent)}
+.faq-q-text{flex:1}
+.faq-cat{flex-shrink:0;font-family:var(--sans);font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--accentbg);border-radius:2px;padding:.14rem .5rem}
+.faq-icon{flex-shrink:0;width:1.2rem;height:1.2rem;border-radius:50%;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:.65rem;color:var(--ink3);font-style:normal;transition:transform .25s var(--ease),border-color .2s,color .2s}
+.faq-item.open .faq-icon{transform:rotate(45deg);border-color:var(--accent);color:var(--accent)}
+.faq-a{overflow:hidden;max-height:0;transition:max-height .38s var(--ease)}
+.faq-a-inner{padding:.1rem 0 1.3rem;font-family:var(--sans);font-size:.76rem;line-height:1.75;color:var(--ink2)}
+.faq-a-inner strong{color:var(--ink);font-weight:600}
+.faq-a-inner ul{margin:.4rem 0 0;padding-left:1.2rem}
+.faq-a-inner li{margin-bottom:.25rem}
+@media(max-width:600px){
+  #faq{padding:3rem 5vw}
+  .faq-q{font-size:.76rem}
+  .faq-cat{display:none}
+}
+
+/* ── CART ─────────────────────────────── */
+#cartNavBtn{position:relative}
+.cart-badge{position:absolute;top:-4px;right:-6px;background:var(--accent);color:#fff;font-size:.6rem;font-weight:700;border-radius:99px;min-width:16px;height:16px;display:none;align-items:center;justify-content:center;padding:0 4px}
+.cart-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;min-height:260px;color:var(--ink3);text-align:center}
+.cart-item{display:flex;align-items:flex-start;gap:.8rem;padding:1rem 0;border-bottom:1px solid var(--border)}
+.cart-item:first-child{border-top:1px solid var(--border)}
+.cart-item-info{flex:1;min-width:0}
+.cart-item-name{font-weight:600;font-size:.88rem;color:var(--ink);line-height:1.3}
+.cart-item-variant{font-size:.75rem;color:var(--ink3);margin-top:.15rem}
+.cart-qty{display:flex;align-items:center;gap:.45rem;margin-top:.5rem}
+.cart-qty-btn{width:22px;height:22px;border:1px solid var(--border);border-radius:6px;background:none;cursor:pointer;font-size:.8rem;display:flex;align-items:center;justify-content:center;transition:border-color .15s,color .15s;padding:0}
+.cart-qty-btn:hover{border-color:var(--accent);color:var(--accent)}
+.cart-qty-num{font-size:.82rem;font-weight:600;min-width:18px;text-align:center}
+.cart-item-right{display:flex;flex-direction:column;align-items:flex-end;gap:.3rem;flex-shrink:0}
+.cart-item-price{font-size:.9rem;color:var(--accent);font-weight:700;white-space:nowrap}
+.cart-remove{background:none;border:none;color:var(--ink3);cursor:pointer;font-size:.75rem;padding:2px;line-height:1;transition:color .15s}
+.cart-remove:hover{color:var(--accent)}
+.cart-footer{padding:1.2rem 0 0;border-top:2px solid var(--border);margin-top:.25rem}
+.cart-total-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.1rem}
+.cart-total-label{font-size:.8rem;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em}
+.cart-total-amount{font-size:1.35rem;font-weight:700;color:var(--ink);font-family:var(--serif)}
+.cart-checkout-btn{width:100%;padding:.95rem;background:var(--ink);color:#fff;border:none;border-radius:2px;font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:background .2s}
+.cart-checkout-btn:hover{background:var(--accent)}
+/* price row add button */
+.price-add-btn{margin-left:auto;padding:.28rem .7rem;border:1px solid var(--accent);border-radius:6px;background:none;color:var(--accent);font-size:.7rem;font-weight:600;cursor:pointer;transition:background .15s,color .15s;white-space:nowrap;flex-shrink:0}
+.price-add-btn:hover{background:var(--accent);color:#fff}
+/* card add button */
+.card-add-btn{padding:.32rem .75rem;border:1px solid var(--accent);border-radius:7px;background:none;color:var(--accent);font-size:.7rem;font-weight:600;cursor:pointer;transition:background .15s,color .15s;white-space:nowrap}
+.card-add-btn:hover,.card-add-btn.added{background:var(--accent);color:#fff}
+/* toast */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(12px);background:var(--ink);color:#fff;padding:.55rem 1.2rem;border-radius:99px;font-size:.8rem;font-weight:500;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;z-index:9999;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── RECON GUIDE ── */
+.recon-select-wrap{position:relative;margin-bottom:1.5rem}
+.recon-select{width:100%;font-family:var(--sans);font-size:.88rem;background:var(--white);border:1.5px solid var(--border);color:var(--ink);padding:.75rem 1rem;border-radius:3px;outline:none;appearance:none;cursor:pointer;transition:border-color .2s}
+.recon-select:focus{border-color:var(--accent)}
+.recon-select-arrow{position:absolute;right:1rem;top:50%;transform:translateY(-50%);color:var(--ink3);pointer-events:none;font-size:.7rem}
+.recon-card{background:var(--ink);border-radius:4px;overflow:hidden;margin-bottom:1.5rem}
+.recon-card-header{padding:1.2rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.recon-card-title{font-family:var(--serif);font-size:1.4rem;color:#fff;margin-bottom:.2rem}
+.recon-card-sub{font-family:var(--sans);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.recon-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.08)}
+.recon-cell{background:var(--ink);padding:1rem 1.2rem}
+.recon-cell-val{font-family:var(--serif);font-size:1.5rem;color:#fff;display:block;line-height:1;margin-bottom:.3rem}
+.recon-cell-label{font-family:var(--sans);font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.recon-doses{margin-bottom:1.5rem}
+.recon-dose-row{display:flex;justify-content:space-between;align-items:center;padding:.65rem 0;border-bottom:1px solid var(--border)}
+.recon-dose-row:last-child{border-bottom:none}
+.recon-dose-label{font-family:var(--sans);font-size:.72rem;color:var(--ink2)}
+.recon-dose-val{font-family:var(--serif);font-size:1rem;color:var(--accent)}
+.recon-steps{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.5rem}
+.recon-step{display:flex;gap:.8rem;align-items:flex-start;padding:.8rem;background:var(--bg);border-radius:3px}
+.recon-step-num{font-family:var(--serif);font-size:1.1rem;color:var(--accent);flex-shrink:0;width:22px;text-align:center;line-height:1.2}
+.recon-step-text{font-family:var(--sans);font-size:.82rem;color:var(--ink2);line-height:1.6;font-weight:300}
+.recon-step-text strong{color:var(--ink);font-weight:500}
+.recon-note{background:var(--accentbg);border-left:3px solid var(--accent);padding:.9rem 1.1rem;border-radius:0 3px 3px 0;font-family:var(--sans);font-size:.8rem;color:var(--ink2);line-height:1.65;font-weight:300}
+.recon-empty{text-align:center;padding:3rem;font-family:var(--sans);font-size:.9rem;color:var(--ink3)}
+
+
+</style>
+
+  </style>
+</head>
+<body>
+
+<header>
+  <!-- LEFT NAV -->
+  <div class="nav-left hide-mobile">
+    <a href="products.html">Products<span class="nav-sub">All Products</span></a>
+    <a href="results.html">Results<span class="nav-sub">Member Results</span></a>
+    <a href="guide.html">Recon Guide<span class="nav-sub">Mixing & Reconstitution</span></a>
+  </div>
+  <!-- LOGO CENTER -->
+  <a href="index.html" class="logo" style="font-family:var(--sans);font-size:1.1rem;font-weight:500;letter-spacing:.03em;color:var(--ink);text-decoration:none">Cela Wonder</a>
+  <!-- RIGHT NAV -->
+  <div class="nav-right">
+    <a href="faq.html" class="hide-mobile">FAQ<span class="nav-sub">Common Questions</span></a>
+    <a href="protocol.html" class="hide-mobile">Build Protocol<span class="nav-sub">Build Protocol</span></a>
+    <div class="nav-tools">
+      <a href="https://line.me/R/ti/p/@cwonder" class="icon-btn line-btn" title="LINE @cwonder" target="_blank" rel="noopener">LINE</a>
+      <button class="icon-btn" onclick="location.href='protocol.html'" title="Protocol Builder">⚗</button>
+      <button class="icon-btn" id="cartNavBtn" onclick="openDrawer('cartDrawer');renderCart()" title="Cart">
+        🛒<span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+    <div class="hamburger-wrap">
+      <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="products.html" class="mobile-nav-link" onclick="closeMobileNav()">Products <span>→</span></a>
+  <a href="results.html" class="mobile-nav-link" onclick="closeMobileNav()">Member Results <span>→</span></a>
+  <a href="guide.html" class="mobile-nav-link" onclick="closeMobileNav()">Recon Guide <span>→</span></a>
+  <a href="faq.html" class="mobile-nav-link" onclick="closeMobileNav()">FAQ <span>→</span></a>
+  <div class="mobile-nav-actions">
+    <a href="protocol.html" class="mobile-nav-action" onclick="closeMobileNav()">⚗ Get Protocol</a>
+    <button class="mobile-nav-action" onclick="closeMobileNav();openCompareDrawer()">⊞ Compare</button>
+    <button class="mobile-nav-action" onclick="closeMobileNav();openDrawer('cartDrawer');renderCart()">🛒 Cart</button>
+    <a href="https://line.me/R/ti/p/@cwonder" class="mobile-nav-action" style="text-decoration:none;display:block;text-align:center;background:#06C755;color:#fff" target="_blank" rel="noopener">LINE @cwonder</a>
+  </div>
+</div>
+
+<!-- ══════════ OVERLAY ══════════ -->
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+<!-- ══════════ PRODUCT DRAWER ══════════ -->
+<div class="drawer" id="productDrawer">
+  <div class="drawer-head">
+    <span class="drawer-head-label" id="drawerLabel"></span>
+    <button class="drawer-close" onclick="closeDrawer('productDrawer')">✕ Close</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+</div>
+
+<!-- ══════════ COMPARE DRAWER ══════════ -->
+<div class="drawer" id="compareDrawer">
+  <div class="drawer-head">
+    <span class="drawer-head-label">Compare Products</span>
+    <button class="drawer-close" onclick="closeDrawer('compareDrawer')">✕ Close</button>
+  </div>
+  <div class="drawer-body" id="compareBody"></div>
+</div>
+
+<!-- ══════════ CART DRAWER ══════════ -->
+<div class="drawer" id="cartDrawer">
+  <div class="drawer-head">
+    <span class="drawer-head-label">🛒 Shopping Cart</span>
+    <button class="drawer-close" onclick="closeDrawer('cartDrawer')">✕ Close</button>
+  </div>
+  <div class="drawer-body" id="cartBody" style="display:flex;flex-direction:column;height:100%"></div>
+</div>
+
+<!-- toast -->
+<div class="toast" id="toast"></div>
+
+<!-- ══════════ COMPARE PANEL (bottom) ══════════ -->
+<div class="compare-panel" id="comparePanel">
+  <span class="compare-panel-label">Comparing</span>
+  <div class="compare-chips" id="compareChips"></div>
+  <button class="compare-go" onclick="openCompareDrawer()">View Comparison →</button>
+  <button class="compare-clear" onclick="clearCompare()">Clear all</button>
+</div>
+
+<div class="filter-bar" id="catalogue">
+  <div class="filter-inner-wrap">
+    <div class="filter-tabs" id="filterTabs">
+      <button class="filter-tab active" data-cat="all">All</button>
+      <button class="filter-tab" data-cat="fat">🔥 Fat Loss</button>
+      <button class="filter-tab" data-cat="muscle">💪 Muscle</button>
+      <button class="filter-tab" data-cat="brain">🧠 Brain & Sleep</button>
+      <button class="filter-tab" data-cat="skin">✨ Skin & Beauty</button>
+      <button class="filter-tab" data-cat="immunity">🛡️ Wellness</button>
+      <button class="filter-tab" data-cat="lifestyle">❤️ Lifestyle</button>
+      <button class="filter-tab" data-cat="hgh">🧬 HGH</button>
+    </div>
+    <div class="filter-right">
+      <div class="search-wrap">
+        <span class="search-ico">⌕</span>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search products...">
+      </div>
+      <button class="compare-btn" id="comparePanelBtn" onclick="openCompareDrawer()">
+        <span>Compare</span>
+        <span class="compare-count" id="compareCount" style="display:none">0</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ CATALOGUE ══════════ -->
+<main class="catalogue" id="catalogueMain">
+  <div id="productGrid"></div>
+  <div class="empty" id="emptyState">
+    <h3>No products found</h3>
+    <p>Try a different search or category</p>
+  </div>
+</main>
+
+
+<script>
+// ══════════════════════════════════════════════
+// PRODUCT DATA
+// ══════════════════════════════════════════════
+const PRODUCTS = [
+  {id:1,cat:'fat',catLabel:'Fat Loss & Metabolism',name:'Retatrutide',nameThai:'Retatrutide',vials:['10mg','20mg'],shortDesc:'GLP-1/GIP/GCG triple agonist — highest efficacy in the fat loss category',desc:'Triple agonist that activates GLP-1, GIP, and Glucagon receptors simultaneously for the strongest and fastest weight loss results in this category',specs:[['Reconstitution','10mg: Bac Water 1.0 ml / 20mg: Bac Water 2.0 ml'],['Starting Dose','2.0 mg / week'],['Draw (U100)','20 units'],['Frequency','1x / week'],['Injection Method','SC — abdomen / thigh / upper arm / upper glutes']],dosing:{recon:'1–2 ml BAC Water',start:'2.0 mg',draw:'20u',freq:'Weekly'},notes:'Inject before bed to reduce nausea. Consult admin for dose adjustments.',prices:[{label:'10mg',amount:'3,190.-'},{label:'20mg',amount:'5,790.-'}],bundles:[{name:'Cagrilintide',why:'Ultimate stack — Cagri+Reta equivalent to CagriSema',price:'2,290.-'},{name:'HGH Fragment 176-191',why:'Boost additional fat burning',price:'1,800.-'}],bestseller:true},
+  {id:2,cat:'fat',catLabel:'Fat Loss & Metabolism',name:'Tirzepatide',nameThai:'Tirzepatide',vials:['10mg','20mg'],shortDesc:'GLP-1/GIP dual agonist — weight loss and blood sugar control',desc:'Dual agonist that activates GLP-1 and GIP receptors simultaneously — a popular choice for beginners',specs:[['Reconstitution','10mg: Bac Water 1.0 ml / 20mg: Bac Water 2.0 ml'],['Starting Dose','2.5 mg / week'],['Draw (U100)','25 units'],['Frequency','1x / week'],['Injection Method','SC — abdomen / thigh / upper arm / upper glutes']],dosing:{recon:'1–2 ml BAC Water',start:'2.5 mg',draw:'25u',freq:'Weekly'},notes:'Inject before bed to reduce GI side effects',prices:[{label:'10mg',amount:'1,890.-'},{label:'20mg',amount:'3,460.-'}],bundles:[{name:'HGH Fragment 176-191',why:'Enhance fat burning — use together',price:'1,800.-'},{name:'L-Carnitine',why:'Pre-workout fat burning',price:'1,690.-'}],bestseller:true},
+  {id:3,cat:'fat',catLabel:'Fat Loss & Metabolism',name:'Cagrilintide',nameThai:'Cagrilintide',vials:['5mg','10mg'],shortDesc:'Amylin analogue — highly effective when stacked with Retatrutide',desc:'Amylin analogue that works via a different mechanism than GLP-1, providing significantly increased weight loss when stacked with Retatrutide',specs:[['Reconstitution','Bac Water 1.0 ml'],['Starting Dose','0.3 mg (with Reta) / 0.5 mg (solo)'],['Draw (U100)','6 units'],['Frequency','1x / week']],dosing:{recon:'1 ml BAC Water',start:'0.3 mg',draw:'6u',freq:'Weekly'},notes:'Top stack: Cagri + Reta',prices:[{label:'5mg',amount:'2,290.-'},{label:'10mg',amount:'3,800.-'}],bundles:[{name:'Retatrutide',why:'The signature CagriSema-equivalent stack',price:'3,190.-'}]},
+  {id:4,cat:'fat',catLabel:'Targeted Fat Loss',name:'Adipotide',nameThai:'Adipotide',vials:['5mg'],shortDesc:'Targeted stubborn fat loss — does not affect muscle mass',desc:'Targets fat tissue directly, especially hard-to-lose stubborn fat',specs:[['Reconstitution','Bac Water 2 ml'],['Starting Dose','250 mcg / day'],['Draw (U100)','10 units → 20 units'],['Frequency','Daily']],dosing:{recon:'2 ml BAC Water',start:'250 mcg',draw:'10u',freq:'Daily'},notes:'Drink plenty of water — affects kidneys. Rest 1-2 months after each vial.',prices:[{label:'5mg',amount:'2,140.-'}],bundles:[{name:'Glutathione',why:'Pairs well — detox + brightening',price:'1,890.-'}]},
+  {id:5,cat:'fat',catLabel:'Fat Loss & Metabolism',name:'HGH Fragment 176-191',nameThai:'HGH Fragment',vials:['5mg + GA Water'],shortDesc:'The fat-burning fragment of HGH — no impact on blood sugar or IGF-1',desc:'Isolated fragment of HGH responsible for fat burning only — no effect on blood sugar or IGF-1',specs:[['Reconstitution','GA Water 2 ml (included)'],['Starting Dose','250 mcg / day'],['Draw (U100)','10 units → 20 units'],['Frequency','Daily']],dosing:{recon:'GA Water 2 ml',start:'250 mcg',draw:'10u',freq:'Daily'},notes:'Use before workout or before fasted breakfast',prices:[{label:'x1 + GA Water',amount:'1,800.-'},{label:'x2 + GA Water',amount:'2,600.-'},{label:'x4 + GA Water',amount:'4,800.-'}],bundles:[{name:'MOTS-c',why:'Metabolic activation stack',price:'3,690.-'}],bestseller:true},
+  {id:6,cat:'fat',catLabel:'Fat Loss & Performance',name:'L-Carnitine',nameThai:'L-Carnitine',vials:['600mg','1000mg'],shortDesc:'Increase fat-to-energy metabolism — popular pre-workout',desc:'Transports fatty acids into mitochondria for energy conversion, enhancing workout performance',specs:[['Reconstitution','Ready to use (Pre-mixed)'],['Starting Dose','0.5 ml'],['Draw (U100)','50 units'],['Frequency','Before workout']],dosing:{recon:'Pre-mixed',start:'0.5 ml',draw:'50u',freq:'Pre-workout'},notes:'Best used alongside exercise',prices:[{label:'600mg',amount:'1,690.-'},{label:'1000mg',amount:'2,140.-'}],bundles:[{name:'Super Human Blend',why:'Stack as a full pre-workout',price:'1,900.-'}]},
+  {id:7,cat:'fat',catLabel:'Fat Loss Blend',name:'Daily Shredded Blend',nameThai:'Daily Shredded Blend',vials:['10ml'],shortDesc:'Cela Wonder Exclusive — all-day fat burning',desc:'Proprietary fat loss blend for daily use',specs:[['Reconstitution','Ready to use'],['Starting Dose','0.5 ml'],['Frequency','Every morning']],dosing:{recon:'Pre-mixed',start:'0.5 ml',draw:'50u',freq:'Daily AM'},notes:'Cela Wonder Exclusive formula',prices:[{label:'10ml',amount:'1,900.-'}]},
+  {id:8,cat:'fat',catLabel:'Fat Loss Blend',name:'Fat Blaster Blend',nameThai:'Fat Blaster',vials:['10ml'],shortDesc:'High-intensity fat loss blend — Cela Wonder Exclusive',desc:'High-intensity exclusive formula for serious fat loss',specs:[['Reconstitution','Ready to use'],['Starting Dose','0.5 ml'],['Frequency','Before workout']],dosing:{recon:'Pre-mixed',start:'0.5 ml',draw:'50u',freq:'Pre-workout'},notes:'Cela Wonder Exclusive',prices:[{label:'10ml',amount:'1,900.-'}]},
+  // MUSCLE
+  {id:9,cat:'muscle',catLabel:'Muscle & GH Stimulation',name:'Tesamorelin + Ipamorelin',nameThai:'Tesamorelin + Ipamorelin',vials:['13mg combo'],shortDesc:'Stimulates GH — reduces visceral fat, builds muscle, improves sleep',desc:'Combination GHRH + GHSR agonist — stimulates GH in a physiological pattern',specs:[['Reconstitution','Bac Water 3 ml'],['Starting Dose','500 mcg Tesa / day'],['Draw (U100)','15 units'],['Frequency','Every night before bed']],dosing:{recon:'3 ml BAC Water',start:'500 mcg',draw:'15u',freq:'Nightly'},notes:'Best results when taken before bed. 5-vial pack available at a discount.',prices:[{label:'13mg',amount:'2,860.-'},{label:'5-vial pack',amount:'12,660.-',deal:true}],bundles:[{name:'BPC-157',why:'Recovery + muscle repair stack',price:'2,140.-'}],bestseller:true},
+  {id:10,cat:'muscle',catLabel:'Muscle & Recovery',name:'CJC-1295 + Ipamorelin',nameThai:'CJC + Ipamorelin',vials:['10mg'],shortDesc:'Stimulates GH pulse — builds muscle, fast recovery, better sleep',desc:'The most popular classic GH stack — builds muscle, reduces fat, speeds recovery',specs:[['Reconstitution','Bac Water 2 ml'],['Starting Dose','100 mcg each'],['Draw (U100)','10 units'],['Frequency','3x/week before bed']],dosing:{recon:'2 ml BAC Water',start:'100 mcg',draw:'10u',freq:'3x/week'},notes:'The best starter for body recomposition',prices:[{label:'10mg',amount:'2,350.-'}],bundles:[{name:'MOTS-c',why:'Metabolic + performance stack',price:'3,690.-'},{name:'BPC-157',why:'Muscle repair + gut health',price:'2,140.-'}],bestseller:true},
+  {id:11,cat:'muscle',catLabel:'Metabolic & Performance',name:'MOTS-c',nameThai:'MOTS-c',vials:['40mg'],shortDesc:'Mitochondria-derived — metabolism, endurance, performance',desc:'Mitochondria-derived peptide that boosts metabolism, endurance, and insulin sensitivity',specs:[['Reconstitution','Bac Water 3 ml'],['Starting Dose','4 units (day 1)'],['Draw (U100)','4u → 38u (gradually increase)'],['Frequency','Daily before breakfast']],dosing:{recon:'3 ml BAC Water',start:'500 mcg',draw:'4u→38u',freq:'Daily AM'},notes:'Gradually increase dose — energy boost can be very strong',prices:[{label:'40mg',amount:'3,690.-'},{label:'Dual pack',amount:'7,200.-',deal:true}],bundles:[{name:'HGH Fragment 176-191',why:'Fat loss + metabolic stack',price:'1,800.-'}],bestseller:true},
+  {id:12,cat:'muscle',catLabel:'Recovery & Repair',name:'BPC-157',nameThai:'BPC-157',vials:['10mg'],shortDesc:'Body Protection Compound — repairs tissue, tendons, and gut',desc:'Repairs tissue, tendons, muscle, and gut lining',specs:[['Reconstitution','Bac Water 2 ml'],['Starting Dose','500 mcg / day'],['Draw (U100)','10 units'],['Frequency','Daily']],dosing:{recon:'2 ml BAC Water',start:'500 mcg',draw:'10u',freq:'Daily'},notes:'Inject near the injury site. Stacks well with TB500.',prices:[{label:'10mg',amount:'2,140.-'},{label:'TB+BPC 10mg',amount:'1,490.-',deal:true}],bundles:[{name:'KPV',why:'Anti-inflammation + gut stack',price:'1,490.-'}]},
+  {id:13,cat:'muscle',catLabel:'Metabolic Health',name:'5-Amino-1MQ',nameThai:'5-Amino-1MQ',vials:['50mg + BAC Water'],shortDesc:'NNMT inhibitor — boosts cellular-level metabolism',desc:'Increases NAD+ and SAM in cells, resulting in enhanced metabolism',specs:[['Reconstitution','Bac Water 3 ml'],['Starting Dose','250 mcg / day'],['Draw (U100)','15 units'],['Frequency','Daily in the morning']],dosing:{recon:'3 ml BAC Water',start:'250 mcg',draw:'15u',freq:'Daily AM'},notes:'Inject in the morning — the body\'s active phase',prices:[{label:'50mg + BAC Water',amount:'3,099.-'}]},
+  {id:14,cat:'muscle',catLabel:'Mitochondrial Health',name:'SS-31',nameThai:'SS-31',vials:['50mg'],shortDesc:'Mitochondria-targeted antioxidant — restores cellular energy',desc:'Directly reduces oxidative stress in mitochondria',specs:[['Reconstitution','Bac Water 3 ml'],['Frequency','Daily']],dosing:{recon:'3 ml BAC Water',start:'Consult admin',draw:'—',freq:'Daily'},notes:'Part of the REBORN Protocol',prices:[{label:'50mg',amount:'3,690.-'},{label:'Dual pack',amount:'7,200.-',deal:true}]},
+  {id:15,cat:'muscle',catLabel:'Recovery & Repair',name:'KPV',nameThai:'KPV',vials:['10mg'],shortDesc:'Alpha-MSH tripeptide — anti-inflammatory, gut restoration',desc:'Anti-inflammatory, restores gut lining, modulates immune function',specs:[['Reconstitution','Bac Water 2 ml'],['Starting Dose','500 mcg / day'],['Draw (U100)','10 units'],['Frequency','Daily']],dosing:{recon:'2 ml BAC Water',start:'500 mcg',draw:'10u',freq:'Daily'},notes:'Stacks well with BPC-157 for a gut protocol',prices:[{label:'10mg',amount:'1,490.-'}]},
+  // BRAIN
+  {id:16,cat:'brain',catLabel:'Brain & Mood',name:'Selank',nameThai:'Selank',vials:['10mg'],shortDesc:'Reduces anxiety, boosts focus — anxiolytic without sedation',desc:'Reduces anxiety without drowsiness, improves focus and memory',specs:[['Reconstitution','Bac Water 2.5 ml'],['Starting Dose','200 mcg'],['Draw (U100)','5 units'],['Frequency','As needed']],dosing:{recon:'2.5 ml BAC Water',start:'200 mcg',draw:'5u',freq:'As needed'},notes:'Use when you need enhanced focus or stress relief',prices:[{label:'10mg',amount:'1,890.-'}],bundles:[{name:'Semax',why:'Brain performance stack',price:'1,890.-'}]},
+  {id:17,cat:'brain',catLabel:'Brain & Cognitive',name:'Semax',nameThai:'Semax',vials:['10mg'],shortDesc:'Stimulates BDNF/NGF — improves memory, focus, brain performance',desc:'Stimulates BDNF and NGF, enhances neuron connectivity',specs:[['Reconstitution','Bac Water 2.5 ml'],['Starting Dose','200 mcg'],['Draw (U100)','5 units'],['Frequency','As needed']],dosing:{recon:'2.5 ml BAC Water',start:'200 mcg',draw:'5u',freq:'As needed'},notes:'Best in the morning for cognitive boost',prices:[{label:'10mg',amount:'1,890.-'}]},
+  {id:18,cat:'brain',catLabel:'Sleep Support',name:'DSIP',nameThai:'DSIP',vials:['5mg'],shortDesc:'Delta Sleep-Inducing Peptide — deep, restful sleep',desc:'Stimulates delta wave sleep for deep sleep and body restoration',specs:[['Reconstitution','Bac Water 2.5 ml'],['Starting Dose','200 mcg / night'],['Draw (U100)','10 units'],['Frequency','Before bed']],dosing:{recon:'2.5 ml BAC Water',start:'200 mcg',draw:'10u',freq:'Nightly'},notes:'30 minutes before bed',prices:[{label:'5mg',amount:'890.-'}]},
+  {id:19,cat:'brain',catLabel:'Longevity & Anti-Ageing',name:'Epithalon',nameThai:'Epithalon',vials:['50mg'],shortDesc:'Telomere-supporting — slows cellular aging',desc:'Stimulates telomerase, slowing aging at the cellular level',specs:[['Reconstitution','Bac Water 5 ml'],['Frequency','Cycled per protocol']],dosing:{recon:'5 ml BAC Water',start:'Consult admin',draw:'—',freq:'Cycled'},notes:'Part of the REBORN Protocol',prices:[{label:'50mg',amount:'3,690.-'}]},
+  {id:20,cat:'brain',catLabel:'Neuroprotection',name:'Pinealon',nameThai:'Pinealon',vials:['10mg'],shortDesc:'Neuroprotective — protects the brain, regulates circadian rhythm',desc:'Protects neurons from oxidative stress, regulates circadian rhythm',specs:[['Reconstitution','Bac Water 2 ml']],dosing:{recon:'2 ml BAC Water',start:'Consult admin',draw:'—',freq:'—'},notes:'Part of the NeuronTide Blend',prices:[{label:'10mg',amount:'1,640.-'}]},
+  {id:21,cat:'brain',catLabel:'Brain Blend — Cela Wonder Exclusive',name:'NeuronTide',nameThai:'NeuronTide',vials:['PE22-28 + Pinealon + Semax + Selank'],shortDesc:'Cela Wonder Exclusive — 4 brain peptides in one vial',desc:'Complete brain blend covering focus, anxiety, neuroprotection, and sleep',specs:[['Reconstitution','Bac Water 2 ml']],dosing:{recon:'2 ml BAC Water',start:'Consult admin',draw:'—',freq:'—'},notes:'Cela Wonder Exclusive formula',prices:[{label:'NeuronTide',amount:'3,190.-'}]},
+  // SKIN
+  {id:22,cat:'skin',catLabel:'Skin, Hair & Anti-Ageing',name:'GHK-Cu',nameThai:'GHK-Cu',vials:['100mg'],shortDesc:'Copper peptide — stimulates collagen, restores skin, increases hair density',desc:'Stimulates collagen and elastin production, restores skin, reduces wrinkles, increases hair density',specs:[['Reconstitution','Bac Water 3 ml'],['Starting Dose','3 mg / day'],['Draw (U100)','10 units'],['Frequency','Daily']],dosing:{recon:'3 ml BAC Water',start:'3 mg',draw:'10u',freq:'Daily'},notes:'Can be used continuously without cycling',prices:[{label:'100mg',amount:'1,090.-'}],bundles:[{name:'KLOW',why:'Full skin + hair protocol',price:'3,390.-'},{name:'Glutathione',why:'Brightening + antioxidant stack',price:'1,890.-'}],bestseller:true},
+  {id:23,cat:'skin',catLabel:'Skin, Hair & Anti-Ageing',name:'GLOW',nameThai:'GLOW',vials:['70mg'],shortDesc:'Skin, hair & nails all in one vial — Skin, Hair & Nail blend',desc:'Blend of GHK-Cu, BPC-157, TB500 — skin, hair, and nails all in one vial',specs:[['Reconstitution','Bac Water 3 ml'],['Starting Dose','3 mg / day'],['Draw (U100)','10 units'],['Frequency','Daily'],['Cycle','2 vials then rest 2 weeks']],dosing:{recon:'3 ml BAC Water',start:'3 mg',draw:'10u',freq:'Daily'},notes:'KLOW is the premium version of GLOW',prices:[{label:'70mg',amount:'2,390.-'}],bundles:[{name:'Glutathione',why:'Brightening + glow stack',price:'1,890.-'},{name:'KLOW',why:'Upgrade to premium version',price:'3,390.-'}],bestseller:true},
+  {id:33,cat:'skin',catLabel:'Skin, Hair & Anti-Ageing',name:'KLOW',nameThai:'KLOW',vials:['80mg'],shortDesc:'Premium skin, hair & nail blend — more concentrated formula than GLOW',desc:'Premium version of GLOW — higher concentration with GHK-Cu, BPC-157, TB500',specs:[['Reconstitution','Bac Water 3 ml'],['Starting Dose','3 mg / day'],['Draw (U100)','10 units → 15 units'],['Frequency','Daily'],['Cycle','2 vials then rest 2 weeks']],dosing:{recon:'3 ml BAC Water',start:'3 mg',draw:'10u',freq:'Daily'},notes:'Premium version of GLOW for more intensive results',prices:[{label:'80mg',amount:'3,390.-'}],bundles:[{name:'Glutathione',why:'Brightening + glow stack',price:'1,890.-'},{name:'GHK-Cu',why:'Full skin + hair protocol',price:'1,090.-'}],bestseller:true},
+  {id:24,cat:'skin',catLabel:'Skin Brightening',name:'Glutathione',nameThai:'Glutathione',vials:['RSH 1500mg'],shortDesc:'Skin brightening, antioxidant, liver support',desc:'Master antioxidant — brightens skin, supports liver, fights aging',specs:[['Reconstitution','Bac Water 5 ml'],['Starting Dose','150 mg / day'],['Draw (U100)','50 units → 100 units'],['Frequency','Daily in the evening, 5 days on / 2 days off']],dosing:{recon:'5 ml BAC Water',start:'150 mg',draw:'50u',freq:'Daily (5 on/2 off)'},notes:'Store in refrigerator. Use within 30 days.',prices:[{label:'1500mg',amount:'1,890.-'}],bestseller:true},
+  // IMMUNITY
+  {id:25,cat:'immunity',catLabel:'Cellular Energy',name:'NAD+ Buffered',nameThai:'NAD+ Buffered',vials:['500mg','1000mg'],shortDesc:'Restores cellular energy — Mitochondria Anti-aging',desc:'Cellular energy + DNA repair — levels decline with age. NAD+ supplementation restores energy.',specs:[['Reconstitution','Sterile Water 1–2 ml'],['Starting Dose','250 mg / day'],['Frequency','Daily']],dosing:{recon:'1–2 ml Sterile Water',start:'250 mg',draw:'Consult admin',freq:'Daily'},notes:'⚠️ Inject very slowly — injecting too fast may cause a hot flush',prices:[{label:'500mg',amount:'2,590.-'},{label:'1000mg',amount:'3,800.-'}],bundles:[{name:'SS-31',why:'Full mitochondrial stack',price:'3,690.-'}],bestseller:true},
+  {id:26,cat:'immunity',catLabel:'Immune Support',name:'Thymosin Alpha-1',nameThai:'Thymosin Alpha-1',vials:['10mg'],shortDesc:'Stimulates T-cells — boosts immune function',desc:'Stimulates T-cells and NK cells, strengthens the immune system',specs:[['Reconstitution','Bac Water 2 ml']],dosing:{recon:'2 ml BAC Water',start:'Consult admin',draw:'—',freq:'—'},notes:'Consult admin for dosing protocol',prices:[{label:'10mg',amount:'2,190.-'}]},
+  {id:27,cat:'immunity',catLabel:'Performance Blend',name:'Super Human Blend',nameThai:'Super Human',vials:['10ml'],shortDesc:'Cela Wonder Exclusive — energy, endurance, focus Pre-workout',desc:'Performance blend for energy, endurance, and mental focus',specs:[['Reconstitution','Ready to use'],['Starting Dose','0.5 ml'],['Frequency','Before workout']],dosing:{recon:'Pre-mixed',start:'0.5 ml',draw:'50u',freq:'Pre-workout'},notes:'Cela Wonder Exclusive Pre-workout',prices:[{label:'10ml',amount:'1,900.-'}]},
+  {id:28,cat:'immunity',catLabel:'Longevity Protocol',name:'REBORN Protocol',nameThai:'REBORN Protocol',vials:['Complete Set'],shortDesc:'Epithalon + SS-31 + MOTS-c + NAD+ — complete Longevity protocol',desc:'Complete longevity protocol covering every pillar of cellular rejuvenation',specs:[['Includes','Epithalon 100mg + SS-31 100mg + MOTS-c 80mg + NAD+ 1000mg']],dosing:{recon:'Per individual SKU',start:'Per protocol',draw:'—',freq:'Cycled'},notes:'Consult admin for schedule',prices:[{label:'REBORN Protocol',amount:'23,456.-'}]},
+  {id:29,cat:'immunity',catLabel:'Senolytic',name:'FOXO4-DRI',nameThai:'FOXO4-DRI',vials:['1 vial','Full protocol 4 vials'],shortDesc:'Senolytic — eliminates senescent cells, cutting-edge',desc:'Eliminates senescent cells, reduces chronic inflammation, rejuvenates tissue',specs:[['Protocol','4 vials for full protocol']],dosing:{recon:'Consult admin',start:'Consult admin',draw:'—',freq:'Cycled'},notes:'Cutting-edge longevity peptide',prices:[{label:'1 vial',amount:'3,990.-'},{label:'Full protocol 4 vials',amount:'14,990.-',deal:true}]},
+  // LIFESTYLE
+  {id:30,cat:'lifestyle',catLabel:'Libido',name:'PT-141',nameThai:'PT-141',vials:['10mg'],shortDesc:'Melanocortin agonist — boosts libido for men and women',desc:'Boosts libido through the central nervous system — suitable for both men and women',specs:[['Reconstitution','Bac Water 2 ml'],['Injection Method','SC — 1-2 hours before use']],dosing:{recon:'2 ml BAC Water',start:'Consult admin',draw:'—',freq:'As needed'},notes:'Stacks well with Oxytocin',prices:[{label:'10mg',amount:'1,280.-'},{label:'PT-141 + Oxytocin dual pack',amount:'2,390.-',deal:true}],bundles:[{name:'Oxytocin',why:'The perfect pair',price:'1,280.-'}]},
+  {id:31,cat:'lifestyle',catLabel:'Mood & Bonding',name:'Oxytocin',nameThai:'Oxytocin',vials:['5mg'],shortDesc:'Bonding hormone — reduces stress, enhances connection',desc:'Reduces cortisol and anxiety, enhances feelings of connection',specs:[['Reconstitution','Bac Water 2 ml']],dosing:{recon:'2 ml BAC Water',start:'Consult admin',draw:'—',freq:'As needed'},notes:'Can be used SC or intranasal',prices:[{label:'5mg',amount:'1,280.-'}]},
+  // HGH
+  {id:32,cat:'hgh',catLabel:'GH — Celivive Certified',name:"HGH191aa | Cel'evoTropin",nameThai:'HGH 191aa',vials:['10 IU','50 IU','100 IU'],shortDesc:"Recombinant HGH — Celivive Certified every batch",desc:'Recombinant Human Growth Hormone — Celivive Certified standard',specs:[['Reconstitution','Bac Water — consult admin'],['Dose & Frequency','Consult admin'],['Storage','Refrigerator 2-8°C at all times']],dosing:{recon:'BAC Water (consult admin)',start:'Consult admin',draw:'—',freq:'Consult admin'},notes:'⚠️ Must be stored in refrigerator at all times. Consult admin before starting.',prices:[{label:'10 IU',amount:'1,110.-'},{label:'50 IU',amount:'3,330.-'},{label:'100 IU',amount:'4,440.-'}]},
+];
+
+// ══════════════════════════════════════════════
+// PROTOCOL DATA
+// ══════════════════════════════════════════════
+const PROTOCOLS = {
+  fat: {
+    name:'Weight & Fat Loss',emoji:'🔥',
+    steps:[
+      {name:'Tirzepatide or Retatrutide',detail:'Core GLP-1 — suppresses appetite, controls metabolism',timing:'1x / week'},
+      {name:'HGH Fragment 176-191',detail:'Accelerates direct fat burning without affecting blood sugar',timing:'Daily before morning'},
+      {name:'L-Carnitine',detail:'Transports fat into mitochondria for energy conversion',timing:'Before workout'},
+    ],
+    note:'Adjust dose every 4 weeks based on results. Always consult admin.',
+  },
+  muscle: {
+    name:'Muscle & Body Recomposition',emoji:'💪',
+    steps:[
+      {name:'CJC-1295 + Ipamorelin',detail:'Stimulates physiological GH pulse — builds muscle, reduces fat',timing:'3x / week before bed'},
+      {name:'MOTS-c',detail:'Metabolic activation + exercise endurance',timing:'Daily before breakfast'},
+      {name:'BPC-157',detail:'Repairs muscle and tendons, speeds recovery',timing:'Daily'},
+    ],
+    note:'Protein must come first — peptides help but without enough protein, muscles won\'t grow',
+  },
+  skin: {
+    name:'Skin, Hair & Anti-aging',emoji:'✨',
+    steps:[
+      {name:'KLOW Blend',detail:'All-in-one skin + hair + nail blend — everything in one vial',timing:'Daily'},
+      {name:'Glutathione',detail:'Skin brightening, antioxidant protection',timing:'Daily in the evening'},
+      {name:'GHK-Cu',detail:'Collagen stimulation + hair density',timing:'Daily near the target area'},
+    ],
+    note:'Use 2 KLOW vials continuously then rest 2 weeks. Visible results in 4-6 weeks.',
+  },
+  brain: {
+    name:'Brain, Sleep & Stress',emoji:'🧠',
+    steps:[
+      {name:'Selank',detail:'Reduces anxiety without drowsiness, boosts focus',timing:'As needed'},
+      {name:'Semax',detail:'Cognitive boost — stimulates BDNF',timing:'Morning'},
+      {name:'DSIP',detail:'Deep sleep, body restoration',timing:'Before bed'},
+    ],
+    note:'Selank + Semax work great together — balancing calm and focus',
+  },
+  longevity: {
+    name:'Complete Longevity',emoji:'🧬',
+    steps:[
+      {name:'REBORN Protocol',detail:'Epithalon + SS-31 + MOTS-c + NAD+ — cellular renewal',timing:'Per schedule'},
+      {name:'GHK-Cu',detail:'Tissue + hair + anti-aging comprehensive',timing:'Daily'},
+      {name:'FOXO4-DRI',detail:'Senolytic — eliminates senescent cells, advanced longevity',timing:'Cycle of 4 vials'},
+    ],
+    note:'Long-term protocol. Visible results in months 3-6.',
+  },
+};
+
+
+// ══════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════
+let activeFilter = 'all';
+let searchTerm = '';
+let compareSet = new Set();
+let activeProduct = null;
+
+// ══════════════════════════════════════════════
+// GRID
+// ══════════════════════════════════════════════
+function emoji(cat){return{fat:'🔥',muscle:'💪',brain:'🧠',skin:'✨',immunity:'🛡️',lifestyle:'❤️',hgh:'🧬'}[cat]||'◆'}
+
+function buildGrid(){
+  const grid = document.getElementById('productGrid');
+  grid.innerHTML = '';
+
+  // Group by cat
+  const cats = [...new Set(PRODUCTS.map(p=>p.cat))];
+  cats.forEach(cat=>{
+    const section = document.createElement('div');
+    section.dataset.cat = cat;
+    section.className = 'cat-section';
+
+    const label = document.createElement('div');
+    label.className = 'cat-label';
+    const SECTION_TITLES = {
+      fat:       'Fat Loss & Metabolism',
+      muscle:    'Muscle & Recovery',
+      brain:     'Brain & Sleep',
+      skin:      'Skin & Beauty',
+      immunity:  'Wellness & Longevity',
+      lifestyle: 'Lifestyle',
+      hgh:       'Growth Hormone',
+    };
+    label.textContent = `${emoji(cat)}  ${SECTION_TITLES[cat] || cat}`;
+    section.appendChild(label);
+
+    const g = document.createElement('div');
+    g.className = 'product-grid';
+
+    PRODUCTS.filter(p=>p.cat===cat).forEach((p,i)=>{
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.dataset.id = p.id;
+      card.dataset.cat = p.cat;
+      card.dataset.search = `${p.name} ${p.nameThai} ${p.shortDesc} ${p.desc}`.toLowerCase();
+      card.style.animationDelay = `${i*0.04}s`;
+
+      card.innerHTML = `
+        <div class="card-top">
+          <span class="card-tag">${p.catLabel}</span>
+          <div class="card-actions">
+            <button class="card-compare-check ${compareSet.has(p.id)?'checked':''}" 
+              onclick="toggleCompare(event,${p.id})" title="Add to compare">✓</button>
+            <span class="card-arrow">↗</span>
+          </div>
+        </div>
+        <div>
+          <div class="card-name">${p.name}</div>
+          <div class="card-name-thai">${p.nameThai}</div>
+        </div>
+        <div class="card-vials">${p.vials.join(' · ')}</div>
+        <div class="card-desc">${p.shortDesc}</div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">${p.prices[0].amount}</div>
+            <div class="card-price-from">${p.prices.length>1?'from ':''}</div>
+          </div>
+          <div class="card-badges" style="display:flex;align-items:center;gap:.5rem">
+            ${p.bestseller?'<span class="badge-popular">★ Popular</span>':''}
+            ${p.prices.length===1
+              ? `<button class="card-add-btn" data-pid="${p.id}" data-label="${p.prices[0].label}" data-amount="${p.prices[0].amount}" onclick="event.stopPropagation();addToCartFromBtn(this)">+ Add</button>`
+              : `<button class="card-add-btn" onclick="event.stopPropagation();openProduct(PRODUCTS.find(x=>x.id===${p.id}))">Select →</button>`
+            }
+          </div>
+        </div>`;
+
+      card.addEventListener('click', e=>{
+        if(e.target.classList.contains('card-compare-check')) return;
+        openProduct(p);
+      });
+
+      if(compareSet.has(p.id)) card.classList.add('compare-selected');
+      g.appendChild(card);
+    });
+
+    section.appendChild(g);
+    grid.appendChild(section);
+  });
+}
+
+// ══════════════════════════════════════════════
+// FILTER + SEARCH
+// ══════════════════════════════════════════════
+function applyFilters(){
+  const sections = document.querySelectorAll('.cat-section');
+  let total = 0;
+
+  sections.forEach(sec=>{
+    const cat = sec.dataset.cat;
+    const catMatch = activeFilter==='all' || cat===activeFilter;
+
+    const cards = sec.querySelectorAll('.card');
+    let visibleInSec = 0;
+    cards.forEach(c=>{
+      const sm = !searchTerm || c.dataset.search.includes(searchTerm);
+      if(catMatch && sm){ c.classList.remove('hidden'); visibleInSec++; total++; }
+      else c.classList.add('hidden');
+    });
+
+    sec.classList.toggle('hidden', visibleInSec===0);
+  });
+
+  document.getElementById('emptyState').classList.toggle('show', total===0);
+}
+
+document.getElementById('filterTabs').addEventListener('click',e=>{
+  const btn = e.target.closest('.filter-tab');
+  if(!btn) return;
+  document.querySelectorAll('.filter-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter = btn.dataset.cat;
+  applyFilters();
+});
+
+document.getElementById('searchInput').addEventListener('input',e=>{
+  searchTerm = e.target.value.toLowerCase();
+  applyFilters();
+});
+
+
+// ══════════════════════════════════════════════
+// FILTERS
+// ══════════════════════════════════════════════
+function applyFilters(){
+  const sections = document.querySelectorAll('.cat-section');
+  let total = 0;
+
+  sections.forEach(sec=>{
+    const cat = sec.dataset.cat;
+    const catMatch = activeFilter==='all' || cat===activeFilter;
+
+    const cards = sec.querySelectorAll('.card');
+    let visibleInSec = 0;
+    cards.forEach(c=>{
+      const sm = !searchTerm || c.dataset.search.includes(searchTerm);
+      if(catMatch && sm){ c.classList.remove('hidden'); visibleInSec++; total++; }
+      else c.classList.add('hidden');
+    });
+
+    sec.classList.toggle('hidden', visibleInSec===0);
+  });
+
+  document.getElementById('emptyState').classList.toggle('show', total===0);
+}
+
+document.getElementById('filterTabs').addEventListener('click',e=>{
+  const btn = e.target.closest('.filter-tab');
+  if(!btn) return;
+  document.querySelectorAll('.filter-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter = btn.dataset.cat;
+  applyFilters();
+});
+
+document.getElementById('searchInput').addEventListener('input',e=>{
+  searchTerm = e.target.value.toLowerCase();
+  applyFilters();
+});
+
+// ══════════════════════════════════════════════
+
+
+// ══════════════════════════════════════════════
+// PRODUCT DRAWER
+// ══════════════════════════════════════════════
+// PRODUCT DRAWER
+// ══════════════════════════════════════════════
+function openProduct(p){
+  activeProduct = p;
+  document.getElementById('drawerLabel').textContent = `${emoji(p.cat)}  ${p.catLabel}`;
+
+  const specsHTML = p.specs.map(([l,v])=>`
+    <tr><td class="spec-lbl">${l}</td><td class="spec-val">${v}</td></tr>`).join('');
+
+  const pricesHTML = p.prices.map(pr=>`
+    <div class="price-row">
+      <span class="price-item">${pr.label}</span>
+      <span class="price-amt ${pr.deal?'deal':''}">${pr.amount}</span>
+      <button class="price-add-btn" data-pid="${p.id}" data-label="${pr.label}" data-amount="${pr.amount}" onclick="addToCartFromBtn(this)">+ Add</button>
+    </div>`).join('');
+
+  const bundlesHTML = p.bundles ? `
+    <div class="section-title">Pairs well with</div>
+    <div class="bundles-grid">
+      ${p.bundles.map(b=>{
+        const bp=PRODUCTS.find(x=>x.name===b.name);
+        const addBtn=bp
+          ?(bp.prices.length===1
+            ?`<button class="price-add-btn" data-pid="${bp.id}" data-label="${bp.prices[0].label}" data-amount="${bp.prices[0].amount}" onclick="addToCartFromBtn(this)">+ Add</button>`
+            :`<div style="display:flex;flex-direction:column;gap:.35rem">${bp.prices.map(pr=>`<div style="display:flex;align-items:center;gap:.5rem"><span style="font-family:var(--sans);font-size:.6rem;color:var(--ink3);white-space:nowrap">${pr.label}</span><button class="price-add-btn" data-pid="${bp.id}" data-label="${pr.label}" data-amount="${pr.amount}" onclick="addToCartFromBtn(this)">+ Add</button></div>`).join('')}</div>`)
+          :'';
+        return `
+        <div class="bundle-item">
+          <span class="bundle-icon">+</span>
+          <div class="bundle-info">
+            <div class="bundle-name">${b.name}</div>
+            <div class="bundle-why">${b.why}</div>
+          </div>
+          ${addBtn||`<div class="bundle-price">${b.price}</div>`}
+        </div>`;
+      }).join('')}
+    </div>` : '';
+
+  document.getElementById('drawerBody').innerHTML = `
+    <div class="d-name">${p.name}</div>
+    <div class="d-name-thai">${p.nameThai}</div>
+    <div class="d-vials">${p.vials.map(v=>`<span class="vial-chip">${v}</span>`).join('')}</div>
+    <p class="d-desc">${p.desc}</p>
+
+    <div class="section-title">Quick Dosing Reference</div>
+    <div class="dosing-card">
+      <div class="dosing-card-title">At a glance — consult admin for personalised dosing</div>
+      <div class="dosing-grid">
+        <div class="dosing-cell">
+          <span class="dosing-val">${p.dosing.recon}</span>
+          <span class="dosing-lbl">Reconstitution</span>
+        </div>
+        <div class="dosing-cell">
+          <span class="dosing-val">${p.dosing.start}</span>
+          <span class="dosing-lbl">Starting Dose</span>
+        </div>
+        <div class="dosing-cell">
+          <span class="dosing-val">${p.dosing.freq}</span>
+          <span class="dosing-lbl">Frequency</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Full Specifications</div>
+    <table class="spec-table"><tbody>${specsHTML}</tbody></table>
+
+    <div class="section-title">Notes</div>
+    <div class="notes-box"><p>${p.notes}</p></div>
+
+    ${bundlesHTML}
+
+    <div class="section-title">Pricing</div>
+    <div class="price-block">${pricesHTML}</div>
+
+    <button class="d-cta" onclick="closeDrawer('productDrawer');openDrawer('cartDrawer');renderCart()">
+      🛒 View Cart / Checkout →
+    </button>
+    `;
+
+  openDrawer('productDrawer');
+}
+
+// ══════════════════════════════════════════════
+// COMPARE
+// ══════════════════════════════════════════════
+
+
+// ══════════════════════════════════════════════
+// COMPARE
+// ══════════════════════════════════════════════
+function toggleCompare(e, id){
+  e.stopPropagation();
+  if(compareSet.has(id)){
+    compareSet.delete(id);
+  } else {
+    if(compareSet.size>=3){ alert('Maximum 3 products to compare'); return; }
+    compareSet.add(id);
+  }
+  updateCompareUI();
+}
+
+function updateCompareUI(){
+  const count = compareSet.size;
+  document.getElementById('compareCount').textContent = count;
+  document.getElementById('compareCount').style.display = count>0?'flex':'none';
+  document.getElementById('compareNavBtn').style.display = count>0?'flex':'none';
+  document.getElementById('compareBadge').textContent = count;
+  document.getElementById('comparePanel').classList.toggle('open', count>0);
+
+  // Update chips
+  const chipsEl = document.getElementById('compareChips');
+  const prods = PRODUCTS.filter(p=>compareSet.has(p.id));
+  chipsEl.innerHTML = prods.map(p=>`
+    <span class="compare-chip">
+      ${p.name}
+      <span class="compare-chip-remove" onclick="toggleCompare(event,${p.id})">✕</span>
+    </span>`).join('');
+
+  // Update cards
+  document.querySelectorAll('.card').forEach(c=>{
+    const id = parseInt(c.dataset.id);
+    c.classList.toggle('compare-selected', compareSet.has(id));
+    const chk = c.querySelector('.card-compare-check');
+    if(chk) chk.classList.toggle('checked', compareSet.has(id));
+  });
+}
+
+function clearCompare(){
+  compareSet.clear();
+  updateCompareUI();
+}
+
+function openCompareDrawer(){
+  const prods = PRODUCTS.filter(p=>compareSet.has(p.id));
+  if(prods.length<2){ alert('Select at least 2 products to compare'); return; }
+
+  const rows = [
+    ['Vials/Size', p=>p.vials.join(', ')],
+    ['Reconstitution', p=>p.dosing.recon],
+    ['Starting Dose', p=>p.dosing.start],
+    ['Draw (U100)', p=>p.dosing.draw],
+    ['Frequency', p=>p.dosing.freq],
+    ['Price from', p=>p.prices[0].amount],
+    ['Popular', p=>p.bestseller?'★ Yes':'—'],
+  ];
+
+  const thHTML = prods.map(p=>`<th class="prod-col">${p.name}</th>`).join('');
+  const rowsHTML = rows.map(([label, fn])=>`
+    <tr>
+      <td class="row-label">${label}</td>
+      ${prods.map(p=>`<td>${fn(p)}</td>`).join('')}
+    </tr>`).join('');
+
+  document.getElementById('compareBody').innerHTML = `
+    <p style="font-family:var(--sans);font-size:.82rem;color:var(--ink2);margin-bottom:1.5rem;font-weight:300">
+      Comparing ${prods.length} products
+    </p>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead><tr><th>Specification</th>${thHTML}</tr></thead>
+        <tbody>${rowsHTML}</tbody>
+      </table>
+    </div>
+    <div style="margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap">
+      ${prods.map(p=>`
+        <button class="btn-secondary" onclick="closeDrawer('compareDrawer');openProduct(PRODUCTS.find(x=>x.id===${p.id}))">
+          View ${p.name} →
+        </button>`).join('')}
+    </div>`;
+
+  openDrawer('compareDrawer');
+}
+
+
+// ══════════════════════════════════════════════
+// CART
+// ══════════════════════════════════════════════
+// ══════════════════════════════════════════════
+// CART
+// ══════════════════════════════════════════════
+let cart = [];
+
+function parsePrice(str){
+  return parseInt(String(str).replace(/,/g,'').replace('.-','').replace(/[^0-9]/g,'')) || 0;
+}
+
+function formatPrice(num){
+  return num.toLocaleString('en-US') + '.-';
+}
+
+function addToCartFromBtn(btn){
+  const pid = parseInt(btn.dataset.pid);
+  const label = btn.dataset.label;
+  const amount = btn.dataset.amount;
+  addToCart(pid, label, amount);
+  btn.textContent = '✓ Added';
+  btn.classList.add('added');
+  setTimeout(()=>{ btn.textContent='+ Add'; btn.classList.remove('added'); }, 1800);
+}
+
+function addToCart(productId, label, amount){
+  const p = PRODUCTS.find(x=>x.id===productId);
+  if(!p) return;
+  const existing = cart.findIndex(item=>item.id===productId && item.label===label);
+  if(existing >= 0){
+    cart[existing].qty++;
+  } else {
+    cart.push({id:productId, name:p.name, nameThai:p.nameThai, label, amount, amountNum:parsePrice(amount), qty:1});
+  }
+  updateCartBadge();
+  showToast('Added ' + p.name + ' (' + label + ') ✓');
+}
+
+function removeFromCart(idx){
+  cart.splice(idx, 1);
+  updateCartBadge();
+  renderCart();
+}
+
+function updateCartQty(idx, delta){
+  if(!cart[idx]) return;
+  cart[idx].qty += delta;
+  if(cart[idx].qty <= 0) cart.splice(idx, 1);
+  updateCartBadge();
+  renderCart();
+}
+
+function updateCartBadge(){
+  const total = cart.reduce((s,i)=>s+i.qty, 0);
+  const badge = document.getElementById('cartBadge');
+  if(!badge) return;
+  badge.textContent = total;
+  badge.style.display = total > 0 ? 'flex' : 'none';
+}
+
+function renderCart(){
+  const body = document.getElementById('cartBody');
+  if(!body) return;
+  if(cart.length === 0){
+    body.innerHTML = `<div class="cart-empty">
+      <div style="font-size:2.5rem;line-height:1">🛒</div>
+      <div style="font-weight:600;color:var(--ink);font-size:.95rem">No items yet</div>
+      <div style="font-size:.82rem">Browse Products and click Add to Cart</div>
+    </div>`;
+    return;
+  }
+  const itemsHTML = cart.map((item,idx)=>`
+    <div class="cart-item">
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-variant">${item.label} — THB${item.amount}</div>
+        <div class="cart-qty">
+          <button class="cart-qty-btn" onclick="updateCartQty(${idx},-1)">−</button>
+          <span class="cart-qty-num">${item.qty}</span>
+          <button class="cart-qty-btn" onclick="updateCartQty(${idx},1)">+</button>
+        </div>
+      </div>
+      <div class="cart-item-right">
+        <div class="cart-item-price">THB${formatPrice(item.amountNum * item.qty)}</div>
+        <button class="cart-remove" onclick="removeFromCart(${idx})" title="Remove">✕</button>
+      </div>
+    </div>`).join('');
+  const total = cart.reduce((s,i)=>s+(i.amountNum*i.qty), 0);
+  body.innerHTML = `<div style="flex:1;overflow-y:auto">${itemsHTML}</div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-amount">THB${formatPrice(total)}</span>
+      </div>
+      <button class="cart-checkout-btn" onclick="checkoutOrder()">Checkout →</button>
+    </div>`;
+}
+
+function checkoutOrder(){
+  if(cart.length === 0) return;
+  alert('Order submitted! We will be in touch.');
+}
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  if(!t) return;
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(()=>t.classList.remove('show'), 2200);
+}
+
+
+
+// ══════════════════════════════════════════════
+// DRAWER / NAV HELPERS
+// ══════════════════════════════════════════════
+function openDrawer(id){
+  document.getElementById(id).classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer(id){
+  document.getElementById(id).classList.remove('open');
+  closeOverlay();
+}
+function closeOverlay(){
+  const anyOpen = document.querySelector('.drawer.open, .modal.open');
+  if(!anyOpen){
+    document.getElementById('overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+function closeAll(){
+  document.querySelectorAll('.drawer').forEach(d=>d.classList.remove('open'));
+  document.querySelectorAll('.modal').forEach(m=>m.classList.remove('open'));
+  document.getElementById('overlay').classList.remove('open');
+  closeMobileNav();
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeAll(); });
+
+function toggleMobileNav(){
+  const nav = document.getElementById('mobileNav');
+  const btn = document.getElementById('hamburger');
+  const open = nav.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function closeMobileNav(){
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ══════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════
+buildGrid();
+applyFilters();
+
+// ── URL hash auto-open ────────────────────────────────────────
+(function(){
+  const hash = location.hash;
+  if(hash && hash.startsWith('#p')){
+    const pid = parseInt(hash.slice(2));
+    const p = PRODUCTS.find(x=>x.id===pid);
+    if(p) openProduct(p);
+  }
+})();
+</script>
+
+<footer>
+  <a href="index.html" class="footer-logo">
+    <span style="font-family:var(--sans);font-size:.9rem;font-weight:500;letter-spacing:.03em">Cela Wonder</span>
+  </a>
+  <nav class="footer-links">
+    <a href="products.html">Products</a>
+    <a href="protocol.html">Get My Protocol</a>
+    <a href="results.html">Results</a>
+    <a href="guide.html">Recon Guide</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://line.me/R/ti/p/@cwonder" target="_blank" rel="noopener" style="color:#06C755">LINE @cwonder</a>
+  </nav>
+  <p class="footer-copy">&copy; 2026 Cela Wonder &mdash; Pure Lab-Tested Products</p>
+</footer>
+
+
+</body>
+</html>

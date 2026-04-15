@@ -1,0 +1,11 @@
+
+PRODUCT IMAGE PLACEHOLDER
+=========================
+The hero section of index.html references:
+  images/product-vial.png
+
+Place your CELA vial product photo in the deploy folder at:
+  cela-website-deploy/images/product-vial.png
+
+The image will display at max-height: 520px with a soft shadow.
+Transparent background (PNG) works best.
