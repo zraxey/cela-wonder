@@ -1562,10 +1562,11 @@ Sent from Cela Wonder Protocol Builder`;
       <div class="send-box-title">Summary Message — Ready to send to admin</div>
       <div class="compiled-msg" id="compiledMsg">${adminMsg}</div>
       <button class="copy-btn" id="copyBtn" onclick="copyMsg()">Copy Message</button>
+      <button class="copy-btn" style="background:#06C755;color:#fff;border-color:#06C755;margin-top:.5rem" onclick="sendProtocolToLine()">Send via LINE →</button>
     </div>
 
     <p style="font-family:var(--sans);font-size:.72rem;color:var(--ink2);text-align:center;letter-spacing:.04em;margin-bottom:1rem;margin-top:.5rem">
-      Protocol saved! Copy the message above and send it to our team for personalised recommendations.
+      Protocol saved! Send directly via LINE or copy the message and send it to our team.
     </p>`;
 }
 
@@ -1588,6 +1589,12 @@ function copyMsg(){
     btn.classList.add('copied');
     setTimeout(()=>{ btn.textContent='Copy Message'; btn.classList.remove('copied'); }, 2000);
   });
+}
+
+function sendProtocolToLine(){
+  const msg = document.getElementById('compiledMsg').textContent;
+  const encoded = encodeURIComponent(msg);
+  window.open(`https://line.me/R/oaMessage/@cwonder/?${encoded}`, '_blank');
 }
 
 function saveOnboardStep(){

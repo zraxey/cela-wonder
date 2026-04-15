@@ -1636,13 +1636,17 @@ function renderCart(){
         <span class="cart-total-label">Total</span>
         <span class="cart-total-amount">THB${formatPrice(total)}</span>
       </div>
-      <button class="cart-checkout-btn" onclick="checkoutOrder()">Checkout →</button>
+      <button class="cart-checkout-btn" style="background:#06C755" onclick="checkoutOrder()">Order via LINE →</button>
     </div>`;
 }
 
 function checkoutOrder(){
   if(cart.length === 0) return;
-  alert('Order submitted! We will be in touch.');
+  const lines = cart.map(item => `${item.qty}x ${item.name} (${item.label}) — THB${item.amount}`);
+  const total = cart.reduce((s,i)=>s+(i.amountNum*i.qty), 0);
+  const msg = `🛒 Cela Wonder — New Order\n\n${lines.join('\n')}\n\nTotal: THB${formatPrice(total)}\n\nPlease confirm availability and payment details.`;
+  const encoded = encodeURIComponent(msg);
+  window.open(`https://line.me/R/oaMessage/@cwonder/?${encoded}`, '_blank');
 }
 
 function showToast(msg){
